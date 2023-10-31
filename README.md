@@ -4,7 +4,7 @@
 
 `Toggle-esque CLI Activity Tracker` is a tool designed to track user activities, providing statistics and reports. As it utilizes Docker, it can be set up easily on any operating system equipped with Docker.
 
-[![Image from Gyazo](https://i.gyazo.com/c63bcbf741bf33189fdbab13cbf728e3.gif)](https://gyazo.com/c63bcbf741bf33189fdbab13cbf728e3)
+[![Image from Gyazo](https://i.gyazo.com/90f77b6e847167147d4a818ea578aea6.gif)](https://gyazo.com/90f77b6e847167147d4a818ea578aea6)
 
 ## Installation
 

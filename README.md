@@ -6,10 +6,6 @@
 
 ## Installation
 
-以下のように、手順3と4の間に新しい手順を追加しました：
-
-## Installation
-
 1. Clone the repository.
 
 ```bash
@@ -55,11 +51,6 @@ track
 ```
 
 ## Commands Description
-... (残りの内容は変更していません) ...
-
-このように、設定ファイルの値をSQLファイルに適切に置き換えることを明示的に指示する手順を追加しました。
-
-## Commands Description
 After executing 'track' on the terminal,
 
 - `start`: Start a new recording.
@@ -73,6 +64,15 @@ After executing 'track' on the terminal,
 - `show`: Display all current records.
 - `quit`: Terminate the Activity Tracker.
 
-## Prerequisites
+## For Contributer
 
-- Docker installed.
+Thank you for considering contributing to Activity Tracker! Here are some guidelines to keep in mind:
+
+- **Adding Commands**: If you're adding new commands, please create them as individual files under the `services` directory.
+  
+- **Utility Functions**: If you create functions that might be reused across different parts of the application, consider placing them in the `services/utils` directory.
+
+- **Pull Requests**: When making pull requests, please follow the Git Flow methodology. Direct your pull requests towards the `develop` branch.
+
+We appreciate your efforts in making Activity Tracker better. Happy coding!
+

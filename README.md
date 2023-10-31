@@ -1,5 +1,3 @@
-# Activity Tracker
-
 ## Overview
 
 `Activity Tracker` is a tool designed to track user activities, providing statistics and reports. As it utilizes Docker, it can be set up easily on any operating system equipped with Docker.

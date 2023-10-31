@@ -9,48 +9,54 @@
 ## Installation
 
 1. Clone the repository.
-
-```bash
-git clone https://github.com/aratetete0619/Toggle-esque-CLI-Activity-Tracker.git
-```
+    ```bash
+    git clone https://github.com/aratetete0619/Toggle-esque-CLI-Activity-Tracker.git
+    ```
 
 2. Navigate to the cloned directory.
-
-```bash
-cd Toggle-esque-CLI-Activity-Tracker
-```
+    ```bash
+    cd Toggle-esque-CLI-Activity-Tracker
+    ```
 
 3. Set up the environment file:
+    ```bash
+    touch .env
+    cp .env.sample .env
+    ```
 
-```bash
-touch .env
-cp .env.sample .env
-```
-
-Edit the `.env` file as necessary to configure your settings.
+    Edit the `.env` file as necessary to configure your settings.
 
 4. Update the `create_user.sql` file:
+    Based on the values you configured in the `.env` file, replace the placeholders in the `create_user.sql` file.
 
-Based on the values you configured in the `.env` file, replace the placeholders in the `create_user.sql` file.
+    ```sql
+    CREATE USER 'your_username' @'%' IDENTIFIED BY 'your_password';
+    GRANT ALL PRIVILEGES ON ActivityTracker.* TO 'your_username' @'%';
+    ```
 
-```sql
-CREATE USER 'your_username' @'%' IDENTIFIED BY 'your_password';
-GRANT ALL PRIVILEGES ON ActivityTracker.* TO 'your_username' @'%';
-```
-
-Make sure to replace `your_username` and `your_password` with the respective values from the `.env` file.
+    Make sure to replace `your_username` and `your_password` with the respective values from the `.env` file.
 
 5. Execute `install.sh` to finalize the setup.
+    ```bash
+    bash install.sh
+    ```
 
-```bash
-bash install.sh
-```
+6. Source your shell configuration file to apply changes:
+    If you're using Zsh:
+    ```bash
+    source $HOME/.zshrc
+    ```
 
-6. After executing the script, the `track` command will be available for use.
+    Or if you're using Bash:
+    ```bash
+    source $HOME/.bashrc
+    ```
 
-```bash
-track
-```
+7. After executing the script, the `track` command will be available for use.
+    ```bash
+    track
+    ```
+
 
 ## Commands Description
 After executing 'track' on the terminal,

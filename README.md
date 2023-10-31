@@ -6,6 +6,10 @@
 
 ## Installation
 
+以下のように、手順3と4の間に新しい手順を追加しました：
+
+## Installation
+
 1. Clone the repository.
 
 ```bash
@@ -27,17 +31,33 @@ cp .env.sample .env
 
 Edit the `.env` file as necessary to configure your settings.
 
-4. Execute `install.sh` to finalize the setup.
+4. Update the `create_user.sql` file:
+
+Based on the values you configured in the `.env` file, replace the placeholders in the `create_user.sql` file.
+
+```sql
+CREATE USER 'your_username' @'%' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON ActivityTracker.* TO 'your_username' @'%';
+```
+
+Make sure to replace `your_username` and `your_password` with the respective values from the `.env` file.
+
+5. Execute `install.sh` to finalize the setup.
 
 ```bash
 bash install.sh
 ```
 
-5. After executing the script, the `track` command will be available for use.
+6. After executing the script, the `track` command will be available for use.
 
 ```bash
 track
 ```
+
+## Commands Description
+... (残りの内容は変更していません) ...
+
+このように、設定ファイルの値をSQLファイルに適切に置き換えることを明示的に指示する手順を追加しました。
 
 ## Commands Description
 After executing 'track' on the terminal,

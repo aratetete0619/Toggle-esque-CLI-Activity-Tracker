@@ -64,7 +64,7 @@ After executing 'track' on the terminal,
 - `show`: Display all current records.
 - `quit`: Terminate the Activity Tracker.
 
-## For Contributer
+## Contributing
 
 Thank you for considering contributing to Activity Tracker! Here are some guidelines to keep in mind:
 

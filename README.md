@@ -36,6 +36,7 @@ bash install.sh
 5. After executing the script, the `track` command will be available for use.
 
 ## Commands Description
+After executing 'track' on the terminal,
 
 - `start`: Start a new recording.
 - `end`: End a recording by specifying its ID.

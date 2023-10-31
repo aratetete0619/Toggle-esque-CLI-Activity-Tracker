@@ -17,7 +17,7 @@ git clone https://github.com/aratetete0619/Toggle-esque-CLI-Activity-Tracker.git
 2. Navigate to the cloned directory.
 
 ```bash
-cd activity_tracker
+cd Toggle-esque-CLI-Activity-Tracker
 ```
 
 3. Set up the environment file:

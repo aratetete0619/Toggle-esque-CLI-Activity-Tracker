@@ -21,7 +21,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DB}
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./create_activities_table.sql:/docker-entrypoint-initdb.d/create_activities_table.sql
+      - ./create_activities_table.sql:/docker-entrypoint-initdb.d/01_create_activities_table.sql
+      - ./create_user.sql:/docker-entrypoint-initdb.d/create_user.sql
 
 volumes:
   mysql-data:

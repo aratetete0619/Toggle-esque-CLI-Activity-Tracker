@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: activity_tracker
+    depends_on:
+      - mysql
+    environment:
+      MYSQL_HOST: ${DB_HOST}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DB: ${DB_NAME}
+    volumes:
+      - ./csv:/app/csv
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB}
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./create_activities_table.sql:/docker-entrypoint-initdb.d/create_activities_table.sql
+
+volumes:
+  mysql-data:

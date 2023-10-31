@@ -11,7 +11,7 @@
 1. Clone the repository.
 
 ```bash
-git clone https://github.com/aratetete0619/activity_tracker.git
+https://github.com/aratetete0619/Toggle-esque-CLI-Activity-Tracker.git
 ```
 
 2. Navigate to the cloned directory.

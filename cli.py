@@ -15,7 +15,8 @@ while True:
     )
     if command == "start":
         title = input("Enter activity title: ")
-        start_activity(title)
+        timezone_str = input("Enter your preferred timezone (default is Asia/Tokyo): ")
+        start_activity(title, timezone_str)
     elif command == "end":
         id = int(input("Enter activity ID to end: "))
         end_activity(id)

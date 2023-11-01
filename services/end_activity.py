@@ -1,9 +1,21 @@
 import datetime
+import os
+import pytz
 from .db_config import get_connection
 from .utils.timedelta_to_time import timedelta_to_time
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def end_activity(id):
+    timezone_str = os.environ.get("USER_TIMEZONE", "Asia/Tokyo")
+    local_timezone = pytz.timezone(timezone_str)
+
+    local_datetime = datetime.datetime.now(local_timezone)
+    end_date = local_datetime.date()
+    end_time = local_datetime.time()
+
     cnx = get_connection()
     cursor = cnx.cursor()
 
@@ -16,13 +28,8 @@ def end_activity(id):
         print("Error: Start time not found for ID:", id)
         return
 
-    end_date = datetime.datetime.now().date()
-    end_time = datetime.datetime.now().time()
-
-    start_datetime = datetime.datetime.combine(
-        datetime.datetime.now().date(), start_time
-    )
-    end_datetime = datetime.datetime.combine(datetime.datetime.now().date(), end_time)
+    start_datetime = datetime.datetime.combine(local_datetime.date(), start_time)
+    end_datetime = datetime.datetime.combine(local_datetime.date(), end_time)
 
     duration = end_datetime - start_datetime
 

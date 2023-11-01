@@ -56,7 +56,14 @@
     ```bash
     track
     ```
-
+8. To change the timezone, modify the `USER_TIMEZONE` value in the `.env` file. (Default: Asia/Tokyo)
+    <br>
+    
+    For example:
+    
+    ```bash
+    USER_TIMEZONE=America/New_York
+    ```
 
 ## Commands Description
 After executing 'track' on the terminal,

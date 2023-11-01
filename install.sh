@@ -14,15 +14,13 @@ fi
 if ! grep -q "export TRACKER_PROJECT_DIR=" $SHELL_PROFILE; then
     echo "export TRACKER_PROJECT_DIR=\"$(pwd)\"" >> $SHELL_PROFILE
 fi
-source $SHELL_PROFILE
-echo $SHELL_PROFILE
+
 
 docker compose build
 chmod +x track.sh
 
 if [[ ":$PATH:" != *":/usr/local/bin:"* ]]; then
     echo "export PATH=$PATH:/usr/local/bin" >> $SHELL_PROFILE
-    source $SHELL_PROFILE
 fi
 ln -s $(pwd)/track.sh /usr/local/bin/track
 
